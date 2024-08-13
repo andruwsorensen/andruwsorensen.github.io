@@ -21,5 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Mobile navigation toggle
     mobileNavToggle.addEventListener('click', function () {
         nav.classList.toggle('mobile-nav');
+        mobileNavToggle.classList.toggle('active');
     });
 });
