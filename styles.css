@@ -156,6 +156,31 @@ h2 {
     transform: scale(1.1);
 }
 
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1;
+}
+
+
 form {
     display: flex;
     flex-direction: column;
@@ -228,6 +253,89 @@ form.dark-mode input, form.dark-mode textarea {
     background-color: #1a1a1a;
     color: #f4f4f4;
 }
+
+/* Media Queries for Mobile Optimization */
+@media (max-width: 768px) {
+    /* Header adjustments for mobile */
+    nav ul {
+        display: none;
+    }
+
+    #dark-mode-toggle {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Mobile-friendly navigation: show links vertically */
+    nav.mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 1rem 0;
+    }
+
+    nav.mobile-nav ul li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    nav.mobile-nav ul li a {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust the about section layout for smaller screens */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text {
+        padding: 1rem;
+    }
+
+    /* Adjust font sizes and padding for mobile */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-list {
+        justify-content: center;
+    }
+
+    form label {
+        font-size: 1rem;
+    }
+
+    form input, form textarea {
+        font-size: 1rem;
+    }
+
+    form button {
+        font-size: 1rem;
+    }
+}
+
 
 /* Animations */
 @keyframes fadeIn {

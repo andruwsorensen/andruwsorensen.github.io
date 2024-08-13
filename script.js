@@ -1,10 +1,10 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('dark-mode-toggle');
+    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+    const nav = document.querySelector('nav');
     const body = document.body;
 
-    // Check if user has a preferred theme and apply it
+    // Dark mode toggle
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         body.classList.add(savedTheme);
@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.toggle('dark-mode');
         const theme = body.classList.contains('dark-mode') ? 'dark-mode' : '';
         toggleButton.textContent = theme === 'dark-mode' ? '☀️ Light Mode' : '🌙 Dark Mode';
-
-        // Save the user's preference
         localStorage.setItem('theme', theme);
+    });
+
+    // Mobile navigation toggle
+    mobileNavToggle.addEventListener('click', function () {
+        nav.classList.toggle('mobile-nav');
     });
 });
