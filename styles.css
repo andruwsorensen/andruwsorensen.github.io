@@ -350,6 +350,10 @@ header.dark-mode {
     color: #f4f4f4;
 }
 
+.project-grid h3, .project-grid p {
+    color: black !important;
+}
+
 form.dark-mode input, form.dark-mode textarea {
     background-color: #333;
     color: #f4f4f4;
